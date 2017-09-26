@@ -19,7 +19,7 @@ class CoreDataStack {
     lazy var peristentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator: NSPersistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         let applicationDocumentsDirectory: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
-        let persistentStoreUrl: URL = applicationDocumentsDirectory.appendingPathComponent("Jenny.sqlite")
+        let persistentStoreUrl: URL = applicationDocumentsDirectory.appendingPathComponent("Jenny8891.sqlite")
         
         do {
             try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: persistentStoreUrl, options: nil)

@@ -12,7 +12,7 @@ import UIKit
 import SystemConfiguration
 
 struct defaultsKeys {
-    static let keySaDB        = "keySaDB"
+    static let keySaDB        = "keyRedditDB"
 }
 
 public struct Categoria {
@@ -57,15 +57,11 @@ class redditAPI {
         
         var auxInt = Int()
         let userdefaults = UserDefaults.standard
-        //let aBool : Bool = ((userdefaults.object(forKey: defaultsKeys.keySaveDB) != nil))
         
         if isInternetAvailable(){
             let sampleDataAddress = "https://www.reddit.com/reddits.json"
             let url = URL(string: sampleDataAddress)!
             let jsonData = try! Data(contentsOf: url)
-            //if auxBool == true && aBool != false{
-            // userdefaults.set(auxBool, forKey: defaultsKeys.keySaveDB)
-            //}
             
             
             if let json = try? JSONSerialization.jsonObject(with: jsonData, options: []) {
@@ -87,6 +83,8 @@ class redditAPI {
                                                imagenHeader: Reddit(dict: jsonArray).data.children.dataChildren.header_img[j]),
                                     at: j)
                         
+                        
+                        
                         if (auxInt != countAudienceTarget-1){
                             createData(nombreCategoria: auxCategoria[j], nombreApp: Reddit(dict: jsonArray).data.children.dataChildren.title[j], detalleApp: Reddit(dict: jsonArray).data.children.dataChildren.description[j], imagenApp: Reddit(dict: jsonArray).data.children.dataChildren.icon_img[j], imagenHeader: Reddit(dict: jsonArray).data.children.dataChildren.header_img[j], index: j)
                         }
@@ -106,6 +104,7 @@ class redditAPI {
                         self.categoria.append(Categoria(nombreCategoria: categoria[i], App: auxDApp))
                         auxDApp.removeAll()
                     }
+                    
                 }
             }
         }
@@ -115,14 +114,16 @@ class redditAPI {
 
             (nombreCategoria,dAp) = fetchData()
             
-            for i in 0...nombreCategoria.count-1 {
-                for j in 0...dAp.count-1 {
-                    if dAp[j].nombreCategoria == nombreCategoria[i]{
-                        auxDApp.append(dAp[j])
+            if nombreCategoria.count != 0 {
+                for i in 0...nombreCategoria.count-1 {
+                    for j in 0...dAp.count-1 {
+                        if dAp[j].nombreCategoria == nombreCategoria[i]{
+                            auxDApp.append(dAp[j])
+                        }
                     }
+                    self.categoria.append(Categoria(nombreCategoria: nombreCategoria[i], App: auxDApp))
+                    auxDApp.removeAll()
                 }
-                self.categoria.append(Categoria(nombreCategoria: nombreCategoria[i], App: auxDApp))
-                auxDApp.removeAll()
             }
             
             
@@ -175,33 +176,6 @@ class redditAPI {
         app.nombreApp = nombreApp
         app.imagenHeader = imagenHeader
         app.imagenApp = imagenApp
-        
-        
-        //        //var url = NSURL(string: imagenApp)
-        //        //var auxImageApp = UIImage()
-        //        var data = NSData(contentsOf: url! as URL)
-        //        if data != nil {
-        //            //auxImageApp = UIImage(data:data! as Data)!
-        //            //app.imagenApp = UIImageJPEGRepresentation(auxImageApp,1)!
-        //        }
-        //        else{
-        //            //let image =  UIImage(named: "white")
-        //            //app.imagenHeader = UIImageJPEGRepresentation(image!,1)!
-        //        }
-        //
-        //
-        //        url = NSURL(string: imagenHeader)
-        //        data = NSData(contentsOf: url! as URL)
-        //        if data != nil {
-        //            auxImageApp = UIImage(data:data! as Data)!
-        //            app.imagenHeader = UIImageJPEGRepresentation(auxImageApp,1)!
-        //        }
-        //        else{
-        //            let image =  UIImage(named: "white")
-        //            app.imagenHeader = UIImageJPEGRepresentation(image!,1)!
-        //        }
-        
-        
         cat.appEntity = app
         
         self.appDelegate.coreDataStack.saveContext()
