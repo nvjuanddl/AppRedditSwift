@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3FF88BE2A011586F5B4E38CECAAD116679F0F502",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3FF88BE2A011586F5B4E38CECAAD116679F0F502" : 9223372036854775807,
+    "BFD8C118C934B1E95CCAA9DDCF1CF8D12650763B" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FD5FCE3B-3EC1-4047-B953-7370686DD304",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3FF88BE2A011586F5B4E38CECAAD116679F0F502" : "App-Reddit-Swift\/",
+    "BFD8C118C934B1E95CCAA9DDCF1CF8D12650763B" : "App-Reddit-Swift\/AppReddit\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AppReddit",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "AppReddit.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nvjuanddl\/App-Reddit-Swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3FF88BE2A011586F5B4E38CECAAD116679F0F502"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nvjuanddl\/AppReddit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BFD8C118C934B1E95CCAA9DDCF1CF8D12650763B"
+    }
+  ]
+}

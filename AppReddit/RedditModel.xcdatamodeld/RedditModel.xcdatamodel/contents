@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AppEntity" representedClassName="AppEntity" syncable="YES">
+        <attribute name="detalleApp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imagenApp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imagenHeader" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombreApp" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="categoriaEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CategoriaEntity" inverseName="appEntity" inverseEntity="CategoriaEntity" syncable="YES"/>
+    </entity>
+    <entity name="CategoriaEntity" representedClassName="CategoriaEntity" syncable="YES">
+        <attribute name="nombreCategoria" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="appEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AppEntity" inverseName="categoriaEntity" inverseEntity="AppEntity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AppEntity" positionX="151" positionY="63" width="128" height="120"/>
+        <element name="CategoriaEntity" positionX="-54" positionY="63" width="128" height="75"/>
+    </elements>
+</model>
