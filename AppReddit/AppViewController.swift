@@ -17,6 +17,8 @@ class AppViewController: UIViewController {
     @IBOutlet weak var imgHeaderImage: UIImageView!
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = app.nombreApp
