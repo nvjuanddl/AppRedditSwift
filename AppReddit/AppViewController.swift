@@ -16,9 +16,9 @@ class AppViewController: UIViewController {
 
     @IBOutlet weak var imgHeaderImage: UIImageView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("JuanDelgado")
         self.title = app.nombreApp
         let url = NSURL(string: app.imagenHeader)
         let data = NSData(contentsOf: url! as URL)
